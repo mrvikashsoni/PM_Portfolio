@@ -143,7 +143,6 @@ const projects = [
   },
 ];
 
-
 export default function ProjectsPage() {
   return (
     <div className="min-h-screen flex flex-col bg-white">
@@ -153,7 +152,6 @@ export default function ProjectsPage() {
       <div className="bg-gray-50 border-b border-gray-100 py-14 px-6">
         <div className="max-w-6xl mx-auto">
           <h1 className="text-4xl lg:text-5xl font-extrabold text-gray-900 mb-4">
-
             Projects
           </h1>
           <p className="text-gray-500 text-lg max-w-2xl">

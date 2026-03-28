@@ -7,7 +7,6 @@ import { Menu, X, Twitter, Linkedin, Facebook, Instagram } from "lucide-react";
 const navItems = [
   { label: "About", href: "/about" },
   { label: "Learn", href: "/learn" },
-
   { label: "Projects", href: "/projects" },
   { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },

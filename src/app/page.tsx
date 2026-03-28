@@ -12,7 +12,6 @@ const featuredProjects = [
     category: "Design system",
     gradient: "from-blue-500 via-indigo-500 to-purple-600",
     accentColor: "#4f46e5",
-
     href: "/projects",
   },
   {
@@ -21,7 +20,6 @@ const featuredProjects = [
     category: "Book",
     gradient: "from-rose-400 via-pink-500 to-fuchsia-600",
     accentColor: "#db2777",
-
     href: "/projects",
   },
   {
@@ -30,7 +28,6 @@ const featuredProjects = [
     category: "Design system",
     gradient: "from-emerald-400 via-teal-500 to-cyan-600",
     accentColor: "#0d9488",
-
     href: "/projects",
   },
 ];
