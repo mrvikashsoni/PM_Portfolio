@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Header } from "@/components/Header";
@@ -144,6 +147,14 @@ const projects = [
 ];
 
 export default function ProjectsPage() {
+  // 1. Add state to track the currently active category
+  const [activeCategory, setActiveCategory] = useState("All");
+
+  // 2. Filter the projects based on the active category
+  const filteredProjects = projects.filter((project) => 
+    activeCategory === "All" ? true : project.category === activeCategory
+  );
+
   return (
     <div className="min-h-screen flex flex-col bg-white">
       <Header />
@@ -164,13 +175,17 @@ export default function ProjectsPage() {
 
       <main className="flex-1 py-16 px-6">
         <div className="max-w-6xl mx-auto">
+          
           {/* Category filter */}
           <div className="flex flex-wrap gap-2 mb-12">
             {categories.map((cat) => (
               <button
                 key={cat}
+                // 3. Update state when a category button is clicked
+                onClick={() => setActiveCategory(cat)}
+                // 4. Update styling logic to check against activeCategory state
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-colors border ${
-                  cat === "All"
+                  activeCategory === cat
                     ? "bg-gray-900 text-white border-gray-900"
                     : "bg-white text-gray-600 border-gray-200 hover:border-gray-400 hover:text-gray-900"
                 }`}
@@ -182,7 +197,8 @@ export default function ProjectsPage() {
 
           {/* Projects grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project) => (
+            {/* 5. Map over the filtered array instead of the full array */}
+            {filteredProjects.map((project) => (
               <Link
                 key={project.id}
                 href="#"
@@ -223,6 +239,14 @@ export default function ProjectsPage() {
               </Link>
             ))}
           </div>
+
+          {/* Empty state (optional, just in case) */}
+          {filteredProjects.length === 0 && (
+             <div className="text-center py-12 text-gray-500">
+               No projects found in this category.
+             </div>
+          )}
+
         </div>
       </main>
 

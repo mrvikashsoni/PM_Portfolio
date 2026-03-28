@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 import { ArrowRight, ExternalLink } from "lucide-react";
 import { Header } from "@/components/Header";
@@ -117,6 +120,14 @@ const certificates = [
 ];
 
 export default function CertificatesPage() {
+  // 1. Add state to track the active category
+  const [activeCategory, setActiveCategory] = useState("All");
+
+  // 2. Filter the certificates based on the active category
+  const filteredCertificates = certificates.filter((cert) => 
+    activeCategory === "All" ? true : cert.category === activeCategory
+  );
+
   return (
     <div className="min-h-screen flex flex-col bg-white">
       <Header />
@@ -136,13 +147,17 @@ export default function CertificatesPage() {
 
       <main className="flex-1 py-16 px-6">
         <div className="max-w-6xl mx-auto">
+          
           {/* Category filter */}
           <div className="flex flex-wrap gap-2 mb-12">
             {categories.map((cat) => (
               <button
                 key={cat}
+                // 3. Update state when a button is clicked
+                onClick={() => setActiveCategory(cat)}
+                // 4. Update the active styling logic to match the state
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-colors border ${
-                  cat === "All"
+                  activeCategory === cat
                     ? "bg-gray-900 text-white border-gray-900"
                     : "bg-white text-gray-600 border-gray-200 hover:border-gray-400 hover:text-gray-900"
                 }`}
@@ -154,7 +169,8 @@ export default function CertificatesPage() {
 
           {/* Certificates grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {certificates.map((cert) => (
+            {/* 5. Map over the FILTERED array instead of the original array */}
+            {filteredCertificates.map((cert) => (
               <div
                 key={cert.id}
                 className="group block rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 border border-gray-100 bg-white"
@@ -201,6 +217,14 @@ export default function CertificatesPage() {
               </div>
             ))}
           </div>
+          
+          {/* Optional: Add an empty state if a category has no certificates yet */}
+          {filteredCertificates.length === 0 && (
+             <div className="text-center py-12 text-gray-500">
+               No certificates found in this category.
+             </div>
+          )}
+
         </div>
       </main>
 
