@@ -233,7 +233,7 @@ export default function Home() {
             href="/learn"
             className="inline-flex items-center gap-2 bg-[#1c3d5e] text-white px-8 py-3.5 rounded-full font-semibold hover:bg-[#162f49] transition-colors shadow-lg"
           >
-            Explore my process <ArrowRight size={14} />
+            Explore <ArrowRight size={14} />
           </Link>
         </div>
       </section>
