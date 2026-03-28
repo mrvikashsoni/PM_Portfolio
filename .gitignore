@@ -9,3 +9,4 @@ next-env.d.ts
 
 # temp files (agar aap track nahi karna chahte)
 README 2.md
+out/
