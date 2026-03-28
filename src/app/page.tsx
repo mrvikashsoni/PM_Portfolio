@@ -52,7 +52,7 @@ export default function Home() {
               Experienced leader specializing in Agile methodologies, team alignment, and end-to-end delivery.
             </p>
             <Link
-              href="/portfolio"
+              href="/projects"
               className="inline-flex items-center gap-2 bg-white text-[#1c3d5e] px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-blue-50 transition-colors shadow-md"
             >
               View my projects <ArrowRight size={14} />
@@ -120,7 +120,7 @@ export default function Home() {
               Problem solver who translates business goals into clear, actionable technical execution.
             </p>
             <Link
-              href="/portfolio"
+              href="/projects"
               className="inline-flex items-center gap-2 bg-white text-[#e07b2e] px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-orange-50 transition-colors shadow-md"
             >
               See my process <ArrowRight size={14} />
@@ -183,7 +183,7 @@ export default function Home() {
 
           <div className="text-center mt-12">
             <Link
-              href="/portfolio"
+              href="/projects"
               className="inline-flex items-center gap-2 border-2 border-gray-900 text-gray-900 px-7 py-3 rounded-full text-sm font-semibold hover:bg-gray-900 hover:text-white transition-all duration-200"
             >
               View all work <ArrowRight size={14} />
