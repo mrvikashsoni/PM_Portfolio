@@ -5,10 +5,10 @@ import { useState } from "react";
 import { Menu, X, Twitter, Linkedin, Facebook, Instagram } from "lucide-react";
 
 const navItems = [
-  { label: "About", href: "/about" },
-  { label: "Learn", href: "/learn" },
+  { label: "About", href: "/about" }, 
   { label: "Projects", href: "/projects" },
   { label: "Certificates", href: "/certificates" },
+  { label: "Learn", href: "/learn" },
   { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
 ];

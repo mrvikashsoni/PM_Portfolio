@@ -23,14 +23,14 @@ const techSkills = [
 
 const skillBars = [
   { label: "Tech Project Management", value: 95, color: "bg-[#1c3d5e]" },
-  { label: "React & Node.js", value: 90, color: "bg-[#e07b2e]" },
+  { label: "React & Node.js", value: 50, color: "bg-[#e07b2e]" },
   { label: "UI/UX & Figma", value: 85, color: "bg-purple-500" },
   { label: "HR & Talent Acquisition", value: 80, color: "bg-emerald-500" },
   { label: "QA & Testing", value: 85, color: "bg-rose-500" },
 ];
 
 const randomFacts = [
-  "Based in Lucknow, India",
+  "5+ years of experience in the Non-tech industry",
   "4.5 years of experience in the tech industry",
   "Currently CTO & Tech Project Manager at BlueCS Limited",
   "Hold a B.Tech. in Mechanical Engineering",
@@ -49,7 +49,7 @@ export default function AboutPage() {
             About me
           </h1>
           <p className="text-gray-500 text-lg max-w-xl">
-            CTO, Tech Project Manager, and multi-disciplinary tech leader based in Lucknow.
+            CTO, Tech Project Manager, and multi-disciplinary tech leader.
           </p>
         </div>
       </div>
